@@ -5,14 +5,21 @@
  * Find the minimal length of the jump enough to avoid all the obstacles.
  */
 
-const avoidObstacles = (input) => {
-  for (let i = 2; ; i++) {
-    let t = true;
-    for (let j = 0; j < input.length; j++) {
-      t = t && input[j] % 1 != 0;
+const avoidObstacles = (input) => { // 1
+  for (let i = 2; ; i++) {  // 2
+    let t = true; // 1
+    for (let j = 0; j < input.length; j++) { // 5
+      t = t && input[j] % 1 != 0; // 7
     }
-    if (t) {
-      return i;
+    if (t) { //1
+      return i; // 1
     }
   }
 };
+
+// T5(r) = 2r[1 + 5r(6)] + 2
+//       = 2r + 60r^2 + 2
+// T5(r) = r + r^2 + 1
+
+// O = n + n^2 + 1
+// O = n^2
